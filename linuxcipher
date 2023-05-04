@@ -21,7 +21,7 @@ int main() {
     getline(cin, message);
     cin >> shift;
     string encrypted_message = encrypt(message, shift);
-    cout << "Encrypted message: " << encrypted_message << endl;
+    cout << encrypted_message << endl;
     return 0;
 }
 
