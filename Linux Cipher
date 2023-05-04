@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string encrypt(string message, int shift) {
+    string result = "";
+    for (int i = 0; i < message.length(); i++) {
+        char c = message[i];
+        if (isalpha(c)) {
+            c = toupper(c);
+            c = ((c - 'A') + shift) % 26 + 'A';
+        }
+        result += c;
+    }
+    return result;
+}
+
+int main() {
+    string message;
+    int shift;
+    getline(cin, message);
+    cin >> shift;
+    string encrypted_message = encrypt(message, shift);
+    cout << "Encrypted message: " << encrypted_message << endl;
+    return 0;
+}
+
